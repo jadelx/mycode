@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript Loan Calculator</title>
+<style>
+    .output{font-weight: bold;}
+    #payment {text-decoration: underline;}
+    #graph {border: solid black 1px;}
+    th, td {vertical-align: top;}
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>计算数据：</th>
+            <td></td>        
+            <th>计算器</th>
+        </tr>
+        <tr>
+            <td>贷款金额：</td>
+            <td><input id="amount" onchange="calculate();"></td>
+            <td rowspan=8>
+                <canvas id="graph" width="400" height="250"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <td>贷款利率：</td>
+            <td><input id="apr" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>贷款年限：</td>
+            <td><input id="years" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>Zipcode：</td>
+            <td><input id="zipcode" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <th>开始计算：</th>
+            <td><button onclick="calculate();">Calculate</button></td>
+        </tr>
+        <tr>
+            <td>月供：</td>
+            <td><span class="output" id="payment"></span></td>
+        </tr>
+        <tr>
+            <td>总计：</td>
+            <td><span class="output" id="total"></span></td>
+        </tr>
+        <tr>
+            <td>利息：</td>
+            <td><span class="output" id="totalinterest"></span></td>
+        </tr>
+        <tr>
+            <th>赞助商：</th>
+            <td colspan="2">合肥晶合集成电路有限公司
+            <div id="lenders"></div>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+    <script>
+        "use strict"
+        
+        function calculate(){
+            var amount = document.getElementById("amount");
+            var apr = document.getElementById("apr");
+            var years = document.getElementById("years");
+            var zipcode = document.getElementById("zipcode");
+            var payment = document.getElementById("payment");
+            var total = document.getElementById("total");
+            var totalinterest = document.getElementById("totalinterest");
+
+            var principal = parseFloat(amount.value);
+            var interest = parseFloat(apr.value)/100 /12;
+            var payments = parseFloat(years.value)*12;
+        }
+    </script>
+
+</body>
+</html>
