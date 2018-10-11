@@ -20,7 +20,7 @@ export default new Router({
 });
 
 const picture = r =>
-  require.ensure([], () => r(require('../page/home/home')), ' picture');
+  require.ensure([], () => r(require('../page/home/picture')), ' picture');
 export default new Router({
   routes: [
     {
