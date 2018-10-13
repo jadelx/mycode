@@ -1,5 +1,5 @@
 <template>
-  <div id="picture"><img src="../build/xc-cli.png"></div>
+  <div id="picture"><img src="../../../build/xc-cli.png"></div>
 </template>
 <script>
 export default {
